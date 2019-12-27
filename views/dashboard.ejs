@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>welcome <%=currentuser%></h1>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="container">
+            <h2>Contact form</h2>
+            <form action="/add/contact" method='post'>
+              <div class="form-group">
+                <label for="text">contact:</label>
+                <input type="text" class="form-control" id="text" placeholder="Enter user name" name="username">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div> 
+          <div class="container">
+            <h2>subscriber form</h2>
+            <form action="/add/subscriber" method='post'>
+              <div class="form-group">
+                <label for="text">subscriber:</label>
+                <input type="text" class="form-control" id="text1" placeholder="Enter user name" name="username">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+          </div> 
+          <div class="container">
+            <h2>User Form</h2>
+            <form action="/user/form/submit" method='post'>
+              <div class="form-group">
+                <p>Send Alert</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="alert" value="yes">enable
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="alert" value="no">disable
+                  </label>
+                </div>  
+              </div>
+              <div class="form-group">
+                <p>Send Message</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="message" value="yes">enable
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="message" value="no">disable
+                  </label>
+                </div>  
+              </div>
+              <div class="form-group">
+                <input type="text" name="textmessage" placeholder="user message">
+              </div>
+              <button type="submit" class="btn">Submit</button>
+            </form>  
+          </div>         
+    </div>
+    <div class="col-lg-6">
+        <h2>All Users</h2>
+        <% for(var i=0;i<users.length;i++){ %>
+           <p><%=users[i].name%></p>
+        <%}%>
+        <h2>All Subscribers</h2>
+        <% for(var i=0;i<subscribers.length;i++){ %>
+           <p><%=subscribers[i]%></p>
+
+        <%}%>
+        <h2>All Contacts</h2>
+        <% for(var i=0;i<contacts.length;i++){ %>
+           <p><%=contacts[i]%></p>
+        <%}%>
+        <h2>Alerts</h2>
+        <% for(var i=0;i<users.length;i++){ %>
+           <p><%=users[i].receivedAlerts%></p>
+        <%}%>
+        <h2>Messages</h2>
+        <% for(var i=0;i<users.length;i++){ %>
+           <p><%=users[i].receivedMessages%></p>
+        <%}%>
+      
+    </div>    
+</div>
+<a href="/logout" class="btn btn-danger">Logout</a>
+<!-- <button type="logout" class="btn btn-primary">logout</button> -->
+</form>
+</body>
+</html>
+
+

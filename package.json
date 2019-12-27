@@ -1,0 +1,36 @@
+{
+  "name": "osos",
+  "version": "1.0.0",
+  "main": "addc.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "connect": "^3.7.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "fcm-node": "^1.5.2",
+    "firebase-admin": "^8.8.0",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.2",
+    "pubnub": "^4.27.2",
+    "request": "^2.88.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "twilio": "^3.39.0",
+    "web-push": "^3.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
