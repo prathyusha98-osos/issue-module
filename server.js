@@ -491,7 +491,9 @@ app.get("/issue", (req, res) => {
 });
 
 
+
 app.post("/submit", (req, res) => {
+  console.log(req.body.name)
 Issue.findOne({name:req.body.name}).then(user=>{
 if(user){
 console.log(user)
@@ -500,11 +502,11 @@ var newIssue=new Issue({
    issue :req.body.issue
 });newIssue.save().then(data=>{
   console.log(data);
-
-  // var object=[];
-  // var object=_.merge(data,user)
-  // console.log(object)
-  // console.log(JSON.stringify(_.mergeWith(data,user)));
+//  var object=[]
+//    object={...user,...data}
+//   console.log(object)
+res.render('submit')
+  
 })
 }else{
   var issue =new Issue({
@@ -514,7 +516,8 @@ var newIssue=new Issue({
      });issue.save().then(data=>{
        console.log(data)
       //  data.issues.push(issue._id)
-       res.send({"message":"your issue is send successfully",data:data} )
+      res.render('msg')
+      //  res.send({"message":"your issue is send successfully",data:data} )
        });
 }
 })
